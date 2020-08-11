@@ -1,0 +1,43 @@
+### From https://github.com/InAnimaTe/docker-quake3
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: quake3-game
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quake3
+  namespace: quake3-game
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: quake3
+  template:
+    metadata:
+      labels:
+        app: quake3
+    spec:
+      containers:
+      - name: quake3
+        image: inanimate/quake3:loaded
+        ports:
+        - containerPort: 27960
+          name: default
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: quake3
+  namespace: quake3-game
+spec:
+  type: ClusterIP
+  selector:
+    app: quake3
+  ports:
+  - name: default
+    protocol: UDP
+    port: 27960
+---

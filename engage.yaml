@@ -1,0 +1,34 @@
+### From https://github.com/InAnimaTe/docker-engage
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: engage
+  labels:
+    app: engage
+spec:
+  replicas: 6
+  selector:
+    matchLabels:
+      app: engage
+  template:
+    metadata:
+      labels:
+        app: engage
+    spec:
+      containers:
+      - name: engage
+        image: inanimate/engage
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: engage
+spec:
+  type: ClusterIP
+  selector:
+    app: engage
+  ports:
+  - name: http
+    port: 80
+    targetPort: 80
