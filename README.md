@@ -19,4 +19,8 @@ kubectl apply -f microservices-demo.yaml
 * A few, like Engage and Kuard are not namespaced and just deployed to whichever namespace your environment is set to.
 * At the top of each service yaml, you can see a link for more information and/or the main page for that service
 
+## Where these came from
 
+* `microservices-demo` - https://github.com/GoogleCloudPlatform/microservices-demo
+* `kuard` - https://github.com/kubernetes-up-and-running/kuard
+* Sock Shop (not included) - https://github.com/microservices-demo/microservices-demo
