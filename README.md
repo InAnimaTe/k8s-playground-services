@@ -24,3 +24,4 @@ kubectl apply -f microservices-demo.yaml
 * `microservices-demo` - https://github.com/GoogleCloudPlatform/microservices-demo
 * `kuard` - https://github.com/kubernetes-up-and-running/kuard
 * Sock Shop (not included) - https://github.com/microservices-demo/microservices-demo
+* Cloud Native App (expense report) - https://github.com/Azure/cloud-native-app
